@@ -138,3 +138,110 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--spacing-md);
+}
+
+
+.section {
+  padding-block: var(--spacing-lg);
+}
+
+.section-alt {
+  background-color: var(--azul-profundo);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-header p {
+  color: var(--cinza-claro);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--size-small);
+  font-weight: 600;
+  font-family: var(--font-titulo);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-critico {
+  background-color: rgba(192, 57, 43, 0.15);
+  color: var(--vermelho-critico);
+  border: 1px solid var(--vermelho-critico);
+}
+
+.badge-alto {
+  background-color: rgba(212, 129, 58, 0.15);
+  color: var(--laranja-alto);
+  border: 1px solid var(--laranja-alto);
+}
+
+.badge-moderado {
+  background-color: rgba(200, 150, 42, 0.15);
+  color: var(--amarelo-moderado);
+  border: 1px solid var(--amarelo-moderado);
+}
+
+.badge-baixo {
+  background-color: rgba(94, 150, 71, 0.15);
+  color: var(--verde-seguro);
+  border: 1px solid var(--verde-seguro);
+}
+
+
+.text-ciano   { color: var(--ciano-alerta); }
+.text-branco  { color: var(--branco); }
+.text-muted   { color: var(--cinza-claro); }
+.text-critico { color: var(--vermelho-critico); }
+.text-seguro  { color: var(--verde-seguro); }
+.text-center  { text-align: center; }
+
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--cinza-escuro) 20%,
+    var(--cinza-escuro) 80%,
+    transparent
+  );
+  margin-block: var(--spacing-md);
+}  
