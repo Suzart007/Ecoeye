@@ -121,6 +121,8 @@ O detalhamento completo das fontes, referências técnicas, dados consultados e 
 
 ➡️ **[Ver todas as fontes (FONTES.txt)](./FONTES.txt)**
 
+>Este documento foi elaborado com o suporte de ferramentas de inteligência artificial, empregadas tanto na pesquisa e coleta de informações quanto na organização e revisão do conteúdo apresentado.
+
 ### Principais fontes
 
 | Categoria | Fonte | Link |

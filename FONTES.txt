@@ -1,0 +1,515 @@
+================================================================================
+  ALERTATERRA - DOCUMENTAÇÃO DE FONTES E REFERÊNCIAS
+  Projeto Acadêmico - FIAP Global Solution 2026/1
+  Curso: Análise e Desenvolvimento de Sistemas
+================================================================================
+
+Este arquivo lista TODAS as fontes, referências, inspirações e materiais
+consultados ou citados no desenvolvimento do projeto AlertaTerra.
+
+IMPORTANTE: Alguns números utilizados no site foram gerados de forma
+ilustrativa para preenchimento acadêmico e estão marcados claramente
+como [DADO FICTÍCIO PARA FINS ACADÊMICOS]. Esses dados devem ser
+substituídos por estatísticas oficiais verificadas antes de qualquer
+publicação ou apresentação formal.
+
+================================================================================
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 1 - DADOS E ESTATÍSTICAS
+--------------------------------------------------------------------------------
+
+Esta seção lista cada dado quantitativo citado no site com sua fonte
+recomendada para verificação.
+
+
+[Tragédia das enchentes no Rio Grande do Sul - Maio 2024]
+Dados citados no site: 354 mortes, 478 municípios afetados, 580 mil
+pessoas deslocadas, R$ 87 bilhões em prejuízos.
+Fonte recomendada para verificação: Defesa Civil do Rio Grande do Sul
+Link: https://www.defesacivil.rs.gov.br/
+Link complementar: https://www.gov.br/secom/pt-br/assuntos/noticias/2024
+Usado para: Contextualizar o problema na página inicial e na página Sobre.
+Status: Números amplamente divulgados pela imprensa em 2024, mas o usuário
+deve verificar os valores finais consolidados pela Defesa Civil RS.
+Data de acesso: 2026
+
+
+[Centro Nacional de Monitoramento e Alertas de Desastres Naturais - CEMADEN]
+Link: https://www.gov.br/cemaden/pt-br
+Usado para: Referência para dados oficiais de monitoramento de desastres
+naturais no Brasil. Citado nas páginas FAQ e Sobre.
+Data de acesso: 2026
+
+
+[Defesa Civil Nacional]
+Link: https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil
+Usado para: Referência para alertas e protocolos de defesa civil.
+Citado nas páginas Contato (números de emergência) e FAQ.
+Data de acesso: 2026
+
+
+[Números de Emergência - Brasil]
+Bombeiros: 193 / Defesa Civil: 199 / SAMU: 192
+Fonte: Governo Federal - Serviços de Emergência
+Link: https://www.gov.br/pt-br/servicos-estaduais/servicos-de-emergencia
+Usado para: Aviso de emergência nas páginas Contato e Reportar.
+Status: Números oficiais e verificados.
+Data de acesso: 2026
+
+
+[Queimadas no Brasil - 22 milhões de hectares em 2024]
+Dado citado no site: "22M ha consumidos por queimadas em 2024".
+Fonte recomendada para verificação: MapBiomas Fogo - Monitor do Fogo
+Link: https://plataforma.brasil.mapbiomas.org/monitor-do-fogo
+Link complementar: INPE BDQueimadas - https://terrabrasilis.dpi.inpe.br/queimadas/portal/
+Status: [DADO APROXIMADO BASEADO EM REPORTAGENS DE 2024 - SUBSTITUIR
+PELOS NÚMEROS OFICIAIS CONSOLIDADOS DO MAPBIOMAS FOGO/INPE]
+Data de acesso: 2026
+
+
+[Percentual de vítimas sem alerta prévio em deslizamentos - 61%]
+Dado citado no site: "61% das vítimas de deslizamentos não receberam alerta".
+Status: [DADO FICTÍCIO PARA FINS ACADÊMICOS - SUBSTITUIR POR ESTATÍSTICA
+REAL DO CEMADEN OU DA DEFESA CIVIL ANTES DA ENTREGA]
+Fonte sugerida para pesquisa: CEMADEN, IBGE Censo Áreas de Risco, USP/CEPED
+Link: https://www.gov.br/cemaden/pt-br
+Data de acesso: 2026
+
+
+[Dados dos alertas exibidos na página /alertas.html]
+Os 15 alertas climáticos exibidos no mapa e na lista (incluindo nomes
+de municípios, horários, descrições de eventos, gravidades e coordenadas
+no mapa SVG) são INTEGRALMENTE FICTÍCIOS, criados para demonstrar a
+funcionalidade da interface.
+Status: [DADOS FICTÍCIOS PARA FINS ACADÊMICOS - DEMONSTRAÇÃO DE UI]
+Arquivo: js/alertas.js (array alertasData)
+Data de acesso: 2026
+
+
+[Estatísticas do Hero da Home - "147 Municípios monitorados", "24/7",
+"3 Fontes de satélite"]
+Status: [DADOS FICTÍCIOS / ILUSTRATIVOS PARA FINS ACADÊMICOS]
+Esses números representam aspirações do projeto, não monitoramento real.
+Data de acesso: 2026
+
+
+[Frequência de imageamento de satélites - Sentinel-1/2, Landsat]
+Dados citados na FAQ: "5-16 dias por ponto" para imagens ópticas,
+"6-12 dias" para radar Sentinel-1.
+Fonte: ESA Sentinel Online e USGS Landsat Mission
+Link Sentinel: https://sentinels.copernicus.eu/web/sentinel/missions
+Link Landsat: https://www.usgs.gov/landsat-missions
+Usado para: Explicação técnica na página FAQ.
+Status: Informação técnica geral das missões, verificável nos sites oficiais.
+Data de acesso: 2026
+
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 2 - REFERÊNCIAS TÉCNICAS (CÓDIGO)
+--------------------------------------------------------------------------------
+
+
+[MDN Web Docs - Mozilla Developer Network]
+Link: https://developer.mozilla.org/pt-BR/
+Usado para: Documentação de referência para todas as APIs nativas
+utilizadas no projeto - HTML semântico, CSS moderno, JavaScript ES6+.
+Data de acesso: 2026
+
+
+[W3C - World Wide Web Consortium]
+Link: https://www.w3.org/
+Link HTML5: https://www.w3.org/TR/html52/
+Link WAI-ARIA: https://www.w3.org/WAI/standards-guidelines/aria/
+Usado para: Padrões de marcação semântica e acessibilidade (WAI-ARIA)
+aplicados em todas as páginas.
+Data de acesso: 2026
+
+
+[Intersection Observer API - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/API/Intersection_Observer_API
+Usado para: Implementação do efeito fade-in dos elementos ao rolar a
+página (arquivo js/main.js, classe .fade-in-element).
+Data de acesso: 2026
+
+
+[CSS Grid Layout - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_grid_layout
+Usado para: Layout em grid responsivo de cards (problema, ODS, integrantes,
+contadores de alertas). Classes .grid-2, .grid-3, .grid-4 em css/style.css.
+Data de acesso: 2026
+
+
+[CSS Flexbox - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_flexible_box_layout
+Usado para: Estruturação da navbar, footer, filter pills, alert cards
+e diversos componentes. Em todo o arquivo css/components.css.
+Data de acesso: 2026
+
+
+[CSS Custom Properties (Variáveis CSS) - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Using_CSS_custom_properties
+Usado para: Sistema de design tokens (paleta de cores, tipografia,
+espaçamentos) declarados em :root no arquivo css/style.css.
+Data de acesso: 2026
+
+
+[CSS @keyframes Animations - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/CSS/@keyframes
+Usado para: Animações pulse (marcadores críticos do mapa), shimmer
+(loading bar e skeleton), fadeInUp, glowPulse e spin.
+Arquivo: css/style.css
+Data de acesso: 2026
+
+
+[CSS @media Queries - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries
+Usado para: Responsividade mobile-first nos breakpoints 480px, 768px,
+992px e 1200px. Arquivo css/responsive.css.
+Data de acesso: 2026
+
+
+[backdrop-filter CSS Property - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/CSS/backdrop-filter
+Usado para: Efeito de blur na navbar fixa quando há scroll.
+Arquivo: css/components.css (.navbar)
+Data de acesso: 2026
+
+
+[Can I Use - Compatibilidade Cross-Browser]
+Link: https://caniuse.com/
+Usado para: Verificação de compatibilidade de propriedades CSS modernas
+(backdrop-filter, gap, clamp, accent-color) com navegadores alvo.
+Data de acesso: 2026
+
+
+[SVG - Scalable Vector Graphics - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/SVG
+Usado para: Logo do projeto, ícones inline, mapa do Brasil simplificado
+em alertas.html. Todos os SVGs foram escritos manualmente (não vieram
+de bibliotecas externas).
+Data de acesso: 2026
+
+
+[FormData e Validação de Formulários - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/API/FormData
+Link validação: https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Form_validation
+Usado para: Validação client-side dos formulários de contato e reporte
+(arquivo js/form.js), com preventDefault() e regex para e-mail.
+Data de acesso: 2026
+
+
+[Event.preventDefault() - MDN]
+Link: https://developer.mozilla.org/pt-BR/docs/Web/API/Event/preventDefault
+Usado para: Interceptação do submit dos formulários para validação
+JavaScript antes de qualquer envio.
+Arquivo: js/form.js
+Data de acesso: 2026
+
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 3 - INSPIRAÇÕES DE DESIGN
+--------------------------------------------------------------------------------
+
+
+[Tema "Espacial / Tech Dark" - Inspiração Geral]
+Sites de referência para o estilo dark + ciano + tipografia moderna:
+- SpaceX: https://www.spacex.com/
+- NASA: https://www.nasa.gov/
+- Linear: https://linear.app/
+- Vercel: https://vercel.com/
+- Stripe: https://stripe.com/
+Usado para: Estética visual do projeto - fundo escuro, acentos em ciano,
+gradientes sutis, glow em elementos importantes.
+
+
+[Paleta de Cores Personalizada do AlertaTerra]
+Justificativa de escolha:
+- Azul-espaço (#0A1929): remete ao espaço sideral, transmite seriedade
+  institucional e cria fundo escuro confortável para leitura prolongada.
+- Ciano-alerta (#00D4FF): cor de destaque que evoca tecnologia e dados
+  de satélite, mantendo alto contraste WCAG AA sobre o fundo escuro.
+- Vermelho/Laranja/Amarelo/Verde: cores convencionais de semáforo de
+  risco, padrão internacional para alertas de desastres (ex: sistema
+  de cores da Defesa Civil e Met Office UK).
+Referência de boas práticas em design de sistemas de alerta:
+Link: https://www.metoffice.gov.uk/weather/guides/severe-weather-advice
+Data de acesso: 2026
+
+
+[Tipografia - Google Fonts]
+Família para títulos: Space Grotesk
+Link: https://fonts.google.com/specimen/Space+Grotesk
+Justificativa: fonte geometrica com leve toque tech, ideal para tema
+espacial.
+
+Família para corpo: Inter
+Link: https://fonts.google.com/specimen/Inter
+Justificativa: fonte legível otimizada para interfaces digitais,
+amplamente usada em produtos modernos (GitHub, Mozilla, Figma).
+
+Carregamento: via tag <link> no index.html / @import no css/style.css.
+Data de acesso: 2026
+
+
+[Iconografia - SVGs Inline Personalizados]
+Status: Todos os ícones SVG presentes no projeto foram escritos
+manualmente diretamente no HTML (não foram importados de bibliotecas
+como Font Awesome, Heroicons ou Lucide).
+Os ícones de redes sociais (GitHub, LinkedIn, Instagram) foram criados
+com base nos paths oficiais públicos das marcas (uso de marca padrão).
+Demais ícones (logo, seta, lupa, escudo, envelope) foram desenhados
+para o projeto.
+
+Para inspiração de SVG icon design, consulte:
+- Heroicons (open source): https://heroicons.com/
+- Lucide (open source): https://lucide.dev/
+- Feather Icons (open source): https://feathericons.com/
+
+Emojis Unicode foram usados como ícones simbólicos (foguete, satélite,
+fogo, água) por serem nativos e acessíveis em todos os sistemas operacionais.
+Data de acesso: 2026
+
+
+[Padrão de Cores de Alerta - Sistema Internacional]
+Referência: Sistema de cores de alerta meteorológico padrão WMO
+(Organização Meteorológica Mundial)
+Link: https://public.wmo.int/en/our-mandate/focus-areas/natural-hazards-and-disaster-risk-reduction
+Usado para: Convenção das 4 gravidades (vermelho=crítico, laranja=alto,
+amarelo=moderado, verde=baixo).
+Data de acesso: 2026
+
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 4 - FONTES OFICIAIS DO BRIEFING FIAP (GLOBAL SOLUTION 2026/1)
+--------------------------------------------------------------------------------
+
+
+[NASA - National Aeronautics and Space Administration]
+Link principal: https://www.nasa.gov/
+Link Earth Observatory: https://earthobservatory.nasa.gov/
+Link Earthdata (dados abertos): https://www.earthdata.nasa.gov/
+Link Programa Artemis: https://www.nasa.gov/humans-in-space/artemis/
+Link Landsat: https://landsat.gsfc.nasa.gov/
+Link MODIS (sensor de queimadas): https://modis.gsfc.nasa.gov/
+Usado para: Referência da fonte de dados orbitais citada no site
+(Landsat, MODIS) e como uma das três fontes obrigatórias do briefing FIAP.
+Data de acesso: 2026
+
+
+[ESA - European Space Agency]
+Link principal: https://www.esa.int/
+Link Observing the Earth: https://www.esa.int/Applications/Observing_the_Earth
+Link Copernicus: https://www.copernicus.eu/pt
+Link Sentinel-1 (radar): https://sentinel.esa.int/web/sentinel/missions/sentinel-1
+Link Sentinel-2 (óptico): https://sentinel.esa.int/web/sentinel/missions/sentinel-2
+Usado para: Referência das missões Sentinel citadas no site (FAQ,
+seção de tecnologias) e como segunda fonte obrigatória do briefing FIAP.
+Data de acesso: 2026
+
+
+[International Charter "Space and Major Disasters"]
+Link: https://disasterscharter.org/
+Usado para: Referência ao mecanismo internacional que disponibiliza
+dados de satélite para resposta a desastres - relevante para o
+posicionamento do projeto. Terceira fonte obrigatória do briefing FIAP.
+Data de acesso: 2026
+
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 5 - OBJETIVOS DE DESENVOLVIMENTO SUSTENTÁVEL (ODS)
+--------------------------------------------------------------------------------
+
+
+[ONU Brasil - Agenda 2030]
+Link: https://brasil.un.org/pt-br/sdgs
+Usado para: Referência geral aos 17 ODS da Agenda 2030.
+Data de acesso: 2026
+
+
+[ODS 11 - Cidades e Comunidades Sustentáveis]
+Link: https://brasil.un.org/pt-br/sdgs/11
+Meta específica relacionada (11.5):
+"Até 2030, reduzir significativamente o número de mortes e o número de
+pessoas afetadas por catástrofes e diminuir substancialmente as perdas
+económicas diretas causadas por elas em relação ao PIB global, incluindo
+os desastres relacionados à água, com foco em proteger os pobres e as
+pessoas em situação de vulnerabilidade"
+Conexão do projeto: O AlertaTerra contribui diretamente para a meta 11.5
+ao prover alertas precoces que permitem evacuação e preparação, reduzindo
+mortes e prejuízos materiais em eventos climáticos extremos.
+Página citando: index.html (seção ODS), sobre.html (seção ODS).
+Data de acesso: 2026
+
+
+[ODS 13 - Ação Contra a Mudança Global do Clima]
+Link: https://brasil.un.org/pt-br/sdgs/13
+Meta específica relacionada (13.1):
+"Reforçar a resiliência e a capacidade de adaptação a riscos relacionados
+ao clima e às catástrofes naturais em todos os países"
+Conexão do projeto: O AlertaTerra fortalece a capacidade adaptativa
+brasileira ao monitorar continuamente queimadas, secas e eventos extremos
+com dados orbitais, gerando inteligência para políticas públicas e
+ações cidadãs.
+Página citando: index.html (seção ODS), sobre.html (seção ODS).
+Data de acesso: 2026
+
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 6 - IMAGENS E MÍDIAS
+--------------------------------------------------------------------------------
+
+
+[Status atual do projeto - SEM IMAGENS EXTERNAS]
+O projeto AlertaTerra na versão entregue NÃO utiliza nenhuma imagem
+externa, foto ou arquivo de mídia importado. Toda a identidade visual
+é construída com:
+
+1. SVG inline desenhado manualmente (logo, ícones, mapa do Brasil)
+2. Emojis Unicode (para ícones simbólicos)
+3. Gradientes e cores CSS puras (sem texturas ou backgrounds raster)
+4. Placeholders genéricos para fotos de integrantes (gradiente CSS +
+   emoji "👤")
+
+Pastas reservadas para mídia futura:
+- assets/img/  (fotos reais dos integrantes - 5 placeholders a substituir)
+- assets/icons/ (ícones SVG adicionais, se necessário)
+
+
+[Recomendações de bancos de imagens gratuitos para uso futuro]
+Caso a equipe queira adicionar imagens reais antes da apresentação:
+
+NASA Image and Video Library (uso público sem restrição na maioria)
+Link: https://images.nasa.gov/
+Licença: Domínio público (verificar caso a caso)
+
+ESA Multimedia Gallery
+Link: https://www.esa.int/ESA_Multimedia
+Licença: ESA Standard Licence (uso educacional permitido)
+
+Unsplash (banco de fotos gratuitas)
+Link: https://unsplash.com/
+Licença: Unsplash License (uso comercial e não comercial)
+
+Pexels
+Link: https://www.pexels.com/
+Licença: Pexels License
+
+Status atual: Nenhuma dessas fontes foi efetivamente utilizada no
+projeto entregue. Esta listagem é apenas para referência futura.
+Data de acesso: 2026
+
+
+
+--------------------------------------------------------------------------------
+SEÇÃO 7 - FERRAMENTAS DE DESENVOLVIMENTO
+--------------------------------------------------------------------------------
+
+
+[Editor de Código - Visual Studio Code]
+Link: https://code.visualstudio.com/
+Desenvolvedor: Microsoft
+Usado para: Edição de todos os arquivos do projeto (.html, .css, .js, .md).
+Data de acesso: 2026
+
+
+[Sistema de Controle de Versão - Git]
+Link: https://git-scm.com/
+Usado para: Versionamento local do código fonte.
+Data de acesso: 2026
+
+
+[Hospedagem de Repositório - GitHub]
+Link: https://github.com/
+Usado para: Hospedagem do código fonte, controle de versões remoto e
+possível publicação via GitHub Pages.
+Data de acesso: 2026
+
+
+[Navegadores de Teste]
+- Google Chrome: https://www.google.com/chrome/
+- Mozilla Firefox: https://www.mozilla.org/firefox/
+- Microsoft Edge: https://www.microsoft.com/edge
+Usados para: Testes de compatibilidade cross-browser, ferramentas de
+desenvolvedor (DevTools) para inspeção de DOM, CSS e console JS,
+teste de responsividade nos breakpoints 360px / 768px / 1440px.
+Data de acesso: 2026
+
+
+[Assistência de Inteligência Artificial - Claude (Anthropic)]
+Link: https://www.anthropic.com/claude
+Modelo utilizado: Claude Sonnet 4.6 / Claude Opus 4.7
+Acesso via: Claude Code CLI (https://claude.com/claude-code)
+Usado para: Apoio no desenvolvimento - geração inicial de estrutura
+HTML, sugestões de organização CSS, implementação de lógica JavaScript
+(filtros, validação, acordeon, Intersection Observer), revisão de
+acessibilidade e padrões W3C, criação de documentação.
+
+DECLARAÇÃO DE TRANSPARÊNCIA ACADÊMICA:
+Em conformidade com as boas práticas acadêmicas, declaramos que houve
+uso de assistente de IA generativa (Claude/Anthropic) durante o
+desenvolvimento técnico do projeto. Todo o código gerado foi revisado,
+testado e adaptado pela equipe. As decisões de arquitetura, escopo,
+identidade visual e conteúdo são de autoria da equipe.
+Data de acesso: 2026
+
+
+[Google Fonts]
+Link: https://fonts.google.com/
+Usado para: Carregamento das tipografias Space Grotesk e Inter via CDN
+no css/style.css.
+Licença: SIL Open Font License (uso livre comercial e não comercial).
+Data de acesso: 2026
+
+
+[Sandbox de Validação HTML - W3C Markup Validator (recomendado)]
+Link: https://validator.w3.org/
+Usado para: Recomendado para validação final do HTML semântico do
+projeto antes da entrega (validação contínua durante desenvolvimento).
+Data de acesso: 2026
+
+
+[Sandbox de Validação CSS - W3C CSS Validator (recomendado)]
+Link: https://jigsaw.w3.org/css-validator/
+Usado para: Recomendado para validação final do CSS antes da entrega.
+Data de acesso: 2026
+
+
+
+================================================================================
+  OBSERVAÇÕES FINAIS E RECOMENDAÇÕES
+================================================================================
+
+1. DADOS A SUBSTITUIR ANTES DA ENTREGA:
+   - Estatísticas marcadas como [DADO FICTÍCIO PARA FINS ACADÊMICOS]
+   - Números aproximados sobre RS 2024 - verificar valores oficiais
+     consolidados pela Defesa Civil RS
+   - Dados de integrantes (nome, RM, turma, GitHub, LinkedIn)
+   - Os 15 alertas exibidos no mapa (todos fictícios)
+
+2. CITAÇÃO RECOMENDADA EM TRABALHOS ACADÊMICOS:
+   Quando referenciar dados externos, utilize o formato ABNT NBR 6023:
+   SOBRENOME, Nome. Título do material. Local: Editora, ano. Disponível
+   em: <URL>. Acesso em: dia mês ano.
+
+3. DECLARAÇÃO OBRIGATÓRIA DE USO DE IA:
+   Antes da entrega final, verificar se a FIAP exige declaração formal
+   de uso de assistente de IA. Caso afirmativo, incluir parágrafo
+   correspondente no relatório técnico do projeto.
+
+4. ATUALIZAÇÃO DE FONTES:
+   Esta lista deve ser revisada antes de cada nova entrega do projeto.
+   Adicione novas referências sempre que incorporar dados ou recursos
+   externos ao site.
+
+================================================================================
+  Última atualização deste arquivo: Maio de 2026
+  Projeto: AlertaTerra - FIAP Global Solution 2026/1
+  Curso: Análise e Desenvolvimento de Sistemas
+================================================================================
