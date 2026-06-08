@@ -8,8 +8,6 @@
 
   <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -35,12 +33,8 @@
         <ul class="nav-menu" id="nav-menu" role="list">
           <li><a href="index.html" class="nav-link">Início</a></li>
           <li><a href="sobre.html" class="nav-link">Sobre</a></li>
-          <li><a href="alertas.html" class="nav-link">Alertas</a></li>
           <li><a href="reportar.html" class="nav-link active">Reportar</a></li>
-          <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="integrantes.html" class="nav-link">Equipe</a></li>
-          <li><a href="contato.html" class="nav-link">Contato</a></li>
-          <li><a href="alertas.html" class="nav-link nav-cta">Ver Alertas</a></li>
         </ul>
       </div>
     </nav>
@@ -56,3 +50,159 @@
         <p>Você viu algo? Reporte agora e ajude a alimentar o sistema de alertas em tempo real.</p>
       </div>
     </div>
+    <div style="background: rgba(255,59,92,0.08); border-bottom: 1px solid rgba(255,59,92,0.2);">
+      <div class="container" style="padding-block: 1rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+        <span style="font-size: 1.25rem;" aria-hidden="true">🚨</span>
+        <p style="margin: 0; font-size: var(--size-small); color: var(--cinza-claro);">
+          <strong style="color: var(--vermelho-critico);">Emergência real?</strong>
+          Este formulário NÃO substitui o Corpo de Bombeiros (193), Defesa Civil (199) ou SAMU (192).
+          Em risco imediato, ligue primeiro!
+        </p>
+      </div>
+    </div>
+
+    
+    <section class="section" id="reportar" aria-labelledby="reportar-titulo">
+      <div class="container">
+
+        <div style="max-width: 720px; margin-inline: auto;">
+
+          <div class="visually-hidden">
+            <h2 id="reportar-titulo">Formulário de reporte de ocorrência</h2>
+          </div>
+
+          <form id="form-reportar" novalidate aria-label="Formulário de reporte de ocorrência climática">
+
+            
+            <fieldset style="border: 1px solid rgba(192,98,58,0.15); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+              <legend style="font-family: var(--font-titulo); font-size: 1rem; color: var(--ciano-alerta); font-weight: 700; padding-inline: 0.5rem;">
+                Tipo de Desastre <span style="color: var(--vermelho-critico);" aria-label="obrigatório">*</span>
+              </legend>
+
+              <div class="form-radio-group" role="group" aria-label="Selecione o tipo de desastre">
+
+                <label class="form-check">
+                  <input type="radio" name="tipo-desastre" value="enchente" class="form-check-input" aria-label="Enchente">
+                  <span class="form-check-label">🌊 Enchente / Alagamento</span>
+                </label>
+
+                <label class="form-check">
+                  <input type="radio" name="tipo-desastre" value="deslizamento" class="form-check-input" aria-label="Deslizamento">
+                  <span class="form-check-label">⛰️ Deslizamento / Erosão</span>
+                </label>
+
+                <label class="form-check">
+                  <input type="radio" name="tipo-desastre" value="queimada" class="form-check-input" aria-label="Queimada">
+                  <span class="form-check-label">🔥 Queimada / Incêndio</span>
+                </label>
+
+                <label class="form-check">
+                  <input type="radio" name="tipo-desastre" value="seca" class="form-check-input" aria-label="Seca">
+                  <span class="form-check-label">🏜️ Seca / Estiagem</span>
+                </label>
+
+              </div>
+              <span class="form-error" id="rep-tipo-error" role="alert" aria-live="polite"></span>
+            </fieldset>
+
+            
+            <div class="form-group">
+              <label class="form-label" for="rep-regiao">
+                Região afetada <span class="required" aria-label="obrigatório">*</span>
+              </label>
+              <select
+                id="rep-regiao"
+                name="regiao"
+                class="form-control"
+                required
+                aria-describedby="rep-regiao-error"
+              >
+                <option value="">Selecione a região</option>
+                <optgroup label="Norte">
+                  <option value="norte-am">Amazonas (AM)</option>
+                  <option value="norte-pa">Pará (PA)</option>
+                  <option value="norte-ro">Rondônia (RO)</option>
+                  <option value="norte-ac">Acre (AC)</option>
+                  <option value="norte-rr">Roraima (RR)</option>
+                  <option value="norte-ap">Amapá (AP)</option>
+                  <option value="norte-to">Tocantins (TO)</option>
+                </optgroup>
+                <optgroup label="Nordeste">
+                  <option value="ne-ba">Bahia (BA)</option>
+                  <option value="ne-ce">Ceará (CE)</option>
+                  <option value="ne-pe">Pernambuco (PE)</option>
+                  <option value="ne-ma">Maranhão (MA)</option>
+                  <option value="ne-pi">Piauí (PI)</option>
+                  <option value="ne-rn">Rio Grande do Norte (RN)</option>
+                  <option value="ne-pb">Paraíba (PB)</option>
+                  <option value="ne-al">Alagoas (AL)</option>
+                  <option value="ne-se">Sergipe (SE)</option>
+                </optgroup>
+                <optgroup label="Centro-Oeste">
+                  <option value="co-go">Goiás (GO)</option>
+                  <option value="co-mt">Mato Grosso (MT)</option>
+                  <option value="co-ms">Mato Grosso do Sul (MS)</option>
+                  <option value="co-df">Distrito Federal (DF)</option>
+                </optgroup>
+                <optgroup label="Sudeste">
+                  <option value="se-sp">São Paulo (SP)</option>
+                  <option value="se-rj">Rio de Janeiro (RJ)</option>
+                  <option value="se-mg">Minas Gerais (MG)</option>
+                  <option value="se-es">Espírito Santo (ES)</option>
+                </optgroup>
+                <optgroup label="Sul">
+                  <option value="sul-rs">Rio Grande do Sul (RS)</option>
+                  <option value="sul-sc">Santa Catarina (SC)</option>
+                  <option value="sul-pr">Paraná (PR)</option>
+                </optgroup>
+              </select>
+              <span class="form-error" id="rep-regiao-error" role="alert" aria-live="polite"></span>
+            </div>
+
+
+            <fieldset style="border: 1px solid rgba(192,98,58,0.15); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+              <legend style="font-family: var(--font-titulo); font-size: 1rem; color: var(--ciano-alerta); font-weight: 700; padding-inline: 0.5rem;">
+                Gravidade percebida <span style="color: var(--vermelho-critico);" aria-label="obrigatório">*</span>
+              </legend>
+
+              <div class="form-radio-group" role="group" aria-label="Selecione a gravidade da ocorrência">
+
+                <label class="form-check">
+                  <input type="radio" name="gravidade" value="critico" class="form-check-input">
+                  <span class="form-check-label" style="color: var(--vermelho-critico);">🔴 Crítico — Risco imediato de vidas</span>
+                </label>
+
+                <label class="form-check">
+                  <input type="radio" name="gravidade" value="alto" class="form-check-input">
+                  <span class="form-check-label" style="color: var(--laranja-alto);">🟠 Alto — Situação perigosa</span>
+                </label>
+
+                <label class="form-check">
+                  <input type="radio" name="gravidade" value="moderado" class="form-check-input">
+                  <span class="form-check-label" style="color: var(--amarelo-moderado);">🟡 Moderado — Monitorar a situação</span>
+                </label>
+
+                <label class="form-check">
+                  <input type="radio" name="gravidade" value="baixo" class="form-check-input">
+                  <span class="form-check-label" style="color: var(--verde-seguro);">🟢 Baixo — Início de ocorrência</span>
+                </label>
+
+              </div>
+              <span class="form-error" id="rep-gravidade-error" role="alert" aria-live="polite"></span>
+            </fieldset>
+
+            <div class="form-group">
+              <label class="form-label" for="rep-descricao">
+                Descrição da ocorrência <span class="required" aria-label="obrigatório">*</span>
+              </label>
+              <textarea
+                id="rep-descricao"
+                name="descricao"
+                class="form-control"
+                placeholder="Descreva o que está acontecendo com o máximo de detalhes: nível da água, extensão do fogo, quantas casas afetadas, se há feridos, etc. (mínimo 20 caracteres)"
+                rows="5"
+                required
+                aria-describedby="rep-descricao-error"
+              ></textarea>
+              <span class="form-error" id="rep-descricao-error" role="alert" aria-live="polite"></span>
+            </div>
