@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var overlay = document.getElementById(overlayId);
     if (overlay) {
       overlay.classList.add('active');
-      // Foca no botão de fechar para acessibilidade
+
       var closeBtn = overlay.querySelector('.modal-close');
       if (closeBtn) closeBtn.focus();
     }
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (overlay) overlay.classList.remove('active');
   }
 
-  // Fecha modais com ESC
+
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
       document.querySelectorAll('.modal-overlay.active').forEach(function (modal) {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Fecha ao clicar no overlay (fora do box)
+
   document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
     overlay.addEventListener('click', function (event) {
       if (event.target === overlay) {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Botões fechar modal
+
   document.querySelectorAll('.modal-close').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var overlay = btn.closest('.modal-overlay');
@@ -79,14 +79,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // ----------------------------------------
-  // FORMULÁRIO DE CONTATO
-  // ----------------------------------------
+
   var formContato = document.getElementById('form-contato');
 
   if (formContato) {
 
-    // Validação ao vivo
+
     attachLiveValidation('contato-nome',      function (v) { return v.trim().length >= 2; });
     attachLiveValidation('contato-email',     function (v) { return isValidEmail(v); });
     attachLiveValidation('contato-assunto',   function (v) { return v !== ''; });
@@ -124,15 +122,84 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (!valid) {
-        // Foca no primeiro campo com erro
+
         var firstError = formContato.querySelector('.form-control.error');
         if (firstError) firstError.focus();
         return;
       }
 
-      // Simula envio — exibe modal de sucesso
+
       showModal('modal-contato');
       formContato.reset();
     });
   }
+var formReportar = document.getElementById('form-reportar');
+
+  if (formReportar) {
+
+    attachLiveValidation('rep-regiao',    function (v) { return v !== ''; });
+    attachLiveValidation('rep-descricao', function (v) { return v.trim().length >= 20; });
+    attachLiveValidation('rep-local',     function (v) { return v.trim().length >= 3; });
+
+    formReportar.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      clearAllErrors(formReportar);
+
+      var tipo      = formReportar.querySelector('input[name="tipo-desastre"]:checked');
+      var regiao    = document.getElementById('rep-regiao');
+      var gravidade = formReportar.querySelector('input[name="gravidade"]:checked');
+      var descricao = document.getElementById('rep-descricao');
+      var local     = document.getElementById('rep-local');
+      var valid     = true;
+
+      if (!tipo) {
+        var tipoError = document.getElementById('rep-tipo-error');
+        if (tipoError) tipoError.textContent = 'Selecione o tipo de desastre.';
+        valid = false;
+      }
+
+      if (!regiao || regiao.value === '') {
+        showError('rep-regiao', 'Selecione a região afetada.');
+        valid = false;
+      }
+
+      if (!gravidade) {
+        var gravError = document.getElementById('rep-gravidade-error');
+        if (gravError) gravError.textContent = 'Informe a gravidade percebida.';
+        valid = false;
+      }
+
+      if (!descricao || descricao.value.trim().length < 20) {
+        showError('rep-descricao', 'Descreva a ocorrência com pelo menos 20 caracteres.');
+        valid = false;
+      }
+
+      if (!local || local.value.trim().length < 3) {
+        showError('rep-local', 'Informe a localização (endereço ou referência).');
+        valid = false;
+      }
+
+      if (!valid) {
+        var firstError = formReportar.querySelector('.form-control.error');
+        if (firstError) firstError.focus();
+        return;
+      }
+
+      var protocolo = gerarProtocolo();
+      var protocoloEl = document.getElementById('protocolo-numero');
+      if (protocoloEl) protocoloEl.textContent = '#' + protocolo;
+
+      showModal('modal-reportar');
+      formReportar.reset();
+    });
+  }
+
+
+  function gerarProtocolo() {
+    var ano    = new Date().getFullYear();
+    var aleatorio = Math.random().toString(36).substring(2, 10).toUpperCase();
+    return 'AT-' + ano + '-' + aleatorio;
+  }
+
 });
