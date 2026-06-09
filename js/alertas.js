@@ -289,4 +289,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
     container.innerHTML = html;
   }
+
+
+  
+  function renderizarMarcadores(lista) {
+    var container = document.getElementById('mapa-marcadores');
+    if (!container) return;
+
+    var html = lista.map(function (alerta) {
+      return (
+        '<div class="map-marker" style="left:' + alerta.mapX + '; top:' + alerta.mapY + ';" ' +
+        'role="img" aria-label="' + alerta.titulo + ' — ' + labelGravidade(alerta.gravidade) + '">' +
+        '<div class="map-marker-dot ' + alerta.gravidade + '" title="' + alerta.titulo + '"></div>' +
+        '<div class="map-tooltip">' + alerta.icon + ' ' + alerta.municipio + '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    container.innerHTML = html;
+  }
+
+  function filtrarAlertas() {
+    return alertasData.filter(function (alerta) {
+      var passaTipo      = filtroAtivo.tipo      === 'todos' || alerta.tipo      === filtroAtivo.tipo;
+      var passaGravidade = filtroAtivo.gravidade === 'todos' || alerta.gravidade === filtroAtivo.gravidade;
+      var passaRegiao    = filtroAtivo.regiao    === 'todos' || alerta.regiao    === filtroAtivo.regiao;
+      return passaTipo && passaGravidade && passaRegiao;
+    });
+  }
+
+  function aplicarFiltros() {
+    var lista = filtrarAlertas();
+    renderizarCards(lista);
+    renderizarMarcadores(lista);
+    atualizarContadores(lista);
+  }
+
+function bindFiltros(seletorGrupo, chave) {
+    var pills = document.querySelectorAll(seletorGrupo + ' .filter-pill');
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        // Remove active de todos do grupo
+        pills.forEach(function (p) { p.classList.remove('active'); });
+        pill.classList.add('active');
+
+        filtroAtivo[chave] = pill.dataset.valor;
+        aplicarFiltros();
+      });
+    });
+  }
+
+  bindFiltros('#filtro-tipo',      'tipo');
+  bindFiltros('#filtro-gravidade', 'gravidade');
+  bindFiltros('#filtro-regiao',    'regiao');
 });
