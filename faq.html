@@ -173,3 +173,89 @@
 
           </ul>
         </div>
+        <div class="fade-in-element" style="margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.25rem; color: var(--ciano-alerta); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.625rem;">
+            <span aria-hidden="true">⚠️</span> Tipos de Alerta
+          </h2>
+
+          <ul class="faq-list" role="list" aria-label="Perguntas sobre tipos de alerta">
+
+            <li class="faq-item" id="faq-gravidades">
+              <button class="faq-question" type="button" aria-controls="resp-gravidades">
+                O que significam as cores dos alertas?
+                <span class="faq-arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="faq-answer" id="resp-gravidades" role="region">
+                <div class="faq-answer-inner">
+                  Os alertas são classificados em quatro níveis de gravidade:
+                  <ul style="margin-top: 0.75rem; padding-left: 1.25rem; list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><span style="color: var(--vermelho-critico); font-weight: 700;">🔴 Crítico</span> — Risco imediato de vida. Evacue a área agora. Siga as orientações da Defesa Civil.</li>
+                    <li style="margin-bottom: 0.5rem;"><span style="color: var(--laranja-alto); font-weight: 700;">🟠 Alto</span> — Situação perigosa em desenvolvimento. Prepare-se para evacuação e fique em alerta.</li>
+                    <li style="margin-bottom: 0.5rem;"><span style="color: var(--amarelo-moderado); font-weight: 700;">🟡 Moderado</span> — Monitoramento intensificado. Evite áreas de risco e esteja pronto para agir.</li>
+                    <li><span style="color: var(--verde-seguro); font-weight: 700;">🟢 Baixo</span> — Situação sob controle. Continue monitorando para possíveis atualizações.</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="faq-item" id="faq-tipos">
+              <button class="faq-question" type="button" aria-controls="resp-tipos">
+                Quais tipos de desastres o AlertaTerra monitora?
+                <span class="faq-arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="faq-answer" id="resp-tipos" role="region">
+                <div class="faq-answer-inner">
+                  Atualmente o AlertaTerra monitora quatro categorias de desastres:
+                  <ul style="margin-top: 0.75rem; padding-left: 1.25rem; list-style: disc; color: var(--cinza-claro);">
+                    <li style="margin-bottom: 0.375rem;"><strong style="color: var(--branco);">🌊 Enchentes</strong> — Detectadas por análise de variação de nível de rios e saturação do solo via imagens radar Sentinel-1;</li>
+                    <li style="margin-bottom: 0.375rem;"><strong style="color: var(--branco);">⛰️ Deslizamentos</strong> — Identificados por análise de relevo, saturação hídrica e histórico de movimentação de encostas;</li>
+                    <li style="margin-bottom: 0.375rem;"><strong style="color: var(--branco);">🔥 Queimadas</strong> — Monitoradas em tempo real via dados MODIS/VIIRS da NASA e BDQueimadas do INPE;</li>
+                    <li><strong style="color: var(--branco);">🏜️ Secas</strong> — Avaliadas por índices de vegetação (NDVI) e dados de precipitação acumulada.</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="fade-in-element">
+          <h2 style="font-size: 1.25rem; color: var(--ciano-alerta); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.625rem;">
+            <span aria-hidden="true">🔒</span> Privacidade
+          </h2>
+
+          <ul class="faq-list" role="list" aria-label="Perguntas sobre privacidade">
+
+            <li class="faq-item" id="faq-dados-pessoais">
+              <button class="faq-question" type="button" aria-controls="resp-dados-pessoais">
+                Meus dados pessoais são armazenados?
+                <span class="faq-arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="faq-answer" id="resp-dados-pessoais" role="region">
+                <div class="faq-answer-inner">
+                  O AlertaTerra é uma plataforma acadêmica sem backend real nesta versão.
+                  Nenhum dado pessoal é enviado ou armazenado — todos os formulários funcionam
+                  apenas como demonstração visual. Em uma versão de produção, a coleta de dados
+                  seria regida pela LGPD (Lei Geral de Proteção de Dados), com consentimento
+                  explícito do usuário e anonimização dos dados de localização quando possível.
+                </div>
+              </div>
+            </li>
+
+            <li class="faq-item" id="faq-localizacao">
+              <button class="faq-question" type="button" aria-controls="resp-localizacao">
+                A plataforma coleta minha localização automaticamente?
+                <span class="faq-arrow" aria-hidden="true">▼</span>
+              </button>
+              <div class="faq-answer" id="resp-localizacao" role="region">
+                <div class="faq-answer-inner">
+                  Não. A localização só seria coletada mediante permissão explícita do usuário,
+                  exclusivamente quando o usuário clicasse em "usar minha localização" ao reportar
+                  uma ocorrência. Em nenhum momento a plataforma coletaria localização passiva
+                  ou em segundo plano. O usuário sempre poderia informar a localização manualmente
+                  por endereço ou município.
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
