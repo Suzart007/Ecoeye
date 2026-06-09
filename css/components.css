@@ -509,3 +509,157 @@
   color: var(--cinza-claro);
   line-height: 1.5;
 }
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-titulo);
+  font-size: var(--size-small);
+  font-weight: 600;
+  color: var(--cinza-claro);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.form-label span.required {
+  color: var(--vermelho-critico);
+  margin-left: 2px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(20, 40, 15, 0.80);
+  border: 1px solid rgba(192, 98, 58, 0.20);
+  border-radius: var(--radius-sm);
+  color: var(--branco);
+  font-family: var(--font-corpo);
+  font-size: var(--size-body);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-control::placeholder {
+  color: rgba(196, 168, 130, 0.5);
+}
+
+.form-control:focus {
+  border-color: var(--ciano-alerta);
+  box-shadow: 0 0 0 3px rgba(192, 98, 58, 0.15);
+}
+
+.form-control.error {
+  border-color: var(--vermelho-critico);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 130px;
+}
+
+select.form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C0623A' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+select.form-control option {
+  background-color: var(--azul-profundo);
+  color: var(--branco);
+}
+
+.form-error {
+  display: block;
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--vermelho-critico);
+  min-height: 1.2em;
+}
+
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-base);
+}
+
+.form-check:hover {
+  background-color: rgba(192, 98, 58, 0.05);
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ciano-alerta);
+  cursor: pointer;
+}
+
+.form-check-label {
+  color: var(--cinza-claro);
+  font-size: var(--size-small);
+  cursor: pointer;
+}
+
+
+.form-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+
+.form-file-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 2px dashed rgba(192, 98, 58, 0.30);
+  border-radius: var(--radius-md);
+  background-color: rgba(20, 40, 15, 0.40);
+  cursor: pointer;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
+  text-align: center;
+}
+
+.form-file-wrapper:hover {
+  border-color: var(--ciano-alerta);
+  background-color: rgba(192, 98, 58, 0.05);
+}
+
+.form-file-wrapper input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.form-file-icon {
+  font-size: 2rem;
+  color: var(--ciano-alerta);
+}
+
+.form-file-text {
+  color: var(--cinza-claro);
+  font-size: var(--size-small);
+}
+
+.form-file-text strong {
+  color: var(--ciano-alerta);
+}
