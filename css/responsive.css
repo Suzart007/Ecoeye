@@ -268,3 +268,104 @@
     height: 42px;
   }
 }
+
+@media (max-width: 480px) {
+
+  :root {
+    --size-h1: 1.75rem;
+    --size-h2: 1.5rem;
+  }
+
+  .container {
+    padding-inline: 0.875rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .section {
+    padding-block: 2.5rem;
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 2rem);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+  }
+
+  .integrante-links {
+    flex-wrap: wrap;
+  }
+
+  .alert-card {
+    padding: 1rem;
+  }
+
+  .faq-question {
+    font-size: var(--size-small);
+    padding: 1rem 1.25rem;
+  }
+
+  .faq-answer-inner {
+    padding: 0 1.25rem 1rem;
+  }
+
+  
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .hero-actions .btn {
+    font-size: 0.875rem;
+  }
+}
+
+
+@media print {
+
+  .navbar,
+  .btn-scroll-top,
+  .nav-toggle,
+  .footer-social,
+  .hero-bg-grid,
+  .hero-bg-glow {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+
+  .card,
+  .alert-card,
+  .faq-item {
+    break-inside: avoid;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in-element {
+    opacity: 1;
+    transform: none;
+  }
+}
