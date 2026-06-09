@@ -233,4 +233,60 @@ document.addEventListener('DOMContentLoaded', function () {
     gravidade: 'todos',
     regiao:    'todos'
   };
+
+
+  
+  function atualizarContadores(lista) {
+    var el = document.getElementById('total-alertas');
+    if (el) el.textContent = lista.length;
+
+    var elLista = document.getElementById('total-alertas-lista');
+    if (elLista) elLista.textContent = lista.length + ' resultado' + (lista.length !== 1 ? 's' : '');
+
+    var criticos = lista.filter(function (a) { return a.gravidade === 'critico'; }).length;
+    var elCrit = document.getElementById('total-criticos');
+    if (elCrit) elCrit.textContent = criticos;
+  }
+
+  function renderizarCards(lista) {
+    var container = document.getElementById('lista-alertas');
+    if (!container) return;
+
+    if (lista.length === 0) {
+      container.innerHTML =
+        '<p class="text-muted text-center" style="padding: 2rem; grid-column: 1/-1;">' +
+        'Nenhum alerta encontrado com os filtros selecionados.</p>';
+      return;
+    }
+
+    var html = lista.map(function (alerta) {
+      return (
+        '<article class="alert-card ' + alerta.gravidade + ' fade-in-element visible" ' +
+        'role="listitem" aria-label="Alerta ' + alerta.gravidade + ': ' + alerta.titulo + '">' +
+
+        '<div class="alert-card-icon card-icon-' + alerta.gravidade + '" aria-hidden="true">' +
+        alerta.icon +
+        '</div>' +
+
+        '<div class="alert-card-body">' +
+        '<div class="alert-card-header">' +
+        '<span class="alert-card-title">' + alerta.titulo + '</span>' +
+        '<span class="badge badge-' + alerta.gravidade + '">' + labelGravidade(alerta.gravidade) + '</span>' +
+        '</div>' +
+
+        '<div class="alert-card-meta">' +
+        '<span>📍 ' + alerta.municipio + ' — ' + alerta.estado + '</span>' +
+        '<span>🕐 ' + alerta.horario + ' · ' + alerta.data + '</span>' +
+        '<span>' + labelTipo(alerta.tipo) + '</span>' +
+        '</div>' +
+
+        '<p class="alert-card-desc">' + alerta.descricao + '</p>' +
+        '</div>' +
+
+        '</article>'
+      );
+    }).join('');
+
+    container.innerHTML = html;
+  }
 });
