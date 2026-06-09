@@ -342,4 +342,34 @@ function bindFiltros(seletorGrupo, chave) {
   bindFiltros('#filtro-tipo',      'tipo');
   bindFiltros('#filtro-gravidade', 'gravidade');
   bindFiltros('#filtro-regiao',    'regiao');
+
+  
+
+    function labelGravidade(g) {
+    return { critico: 'Crítico', alto: 'Alto', moderado: 'Moderado', baixo: 'Baixo' }[g] || g;
+  }
+
+  function labelTipo(t) {
+    return {
+      enchente:     '🌊 Enchente',
+      deslizamento: '⛰️ Deslizamento',
+      queimada:     '🔥 Queimada',
+      seca:         '🏜️ Seca'
+    }[t] || t;
+  }
+
+  // ----------------------------------------
+  // LOADING BAR SIMULADO
+  // ----------------------------------------
+  var loadingBar = document.getElementById('loading-bar');
+  if (loadingBar) {
+    loadingBar.style.display = 'block';
+    setTimeout(function () {
+      loadingBar.style.display = 'none';
+      aplicarFiltros(); // Renderiza após "carregamento"
+    }, 1200);
+  } else {
+    aplicarFiltros();
+  }
+
 });
