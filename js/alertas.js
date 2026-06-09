@@ -329,7 +329,7 @@ function bindFiltros(seletorGrupo, chave) {
     var pills = document.querySelectorAll(seletorGrupo + ' .filter-pill');
     pills.forEach(function (pill) {
       pill.addEventListener('click', function () {
-        // Remove active de todos do grupo
+        
         pills.forEach(function (p) { p.classList.remove('active'); });
         pill.classList.add('active');
 
@@ -358,15 +358,13 @@ function bindFiltros(seletorGrupo, chave) {
     }[t] || t;
   }
 
-  // ----------------------------------------
-  // LOADING BAR SIMULADO
-  // ----------------------------------------
+
   var loadingBar = document.getElementById('loading-bar');
   if (loadingBar) {
     loadingBar.style.display = 'block';
     setTimeout(function () {
       loadingBar.style.display = 'none';
-      aplicarFiltros(); // Renderiza após "carregamento"
+      aplicarFiltros(); 
     }, 1200);
   } else {
     aplicarFiltros();
