@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alertas climáticos ativos no Brasil — enchentes, deslizamentos, queimadas e secas monitorados por satélite.">
+  <title>Alertas — AlertaTerra</title>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+      <div class="container navbar-inner">
+        <a href="index.html" class="navbar-brand" aria-label="AlertaTerra — Página inicial">
+          <svg class="navbar-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="17" stroke="#C0623A" stroke-width="2"/>
+            <path d="M18 4C18 4 10 12 10 20a8 8 0 0016 0c0-8-8-16-8-16z" fill="rgba(192,98,58,0.20)" stroke="#C0623A" stroke-width="1.5"/>
+            <circle cx="18" cy="20" r="3" fill="#C0623A"/>
+            <path d="M8 14l4 4M28 14l-4 4" stroke="#C0623A" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Alerta<span class="brand-highlight">Terra</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu" role="list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="alertas.html" class="nav-link active">Alertas</a></li>
+          <li><a href="reportar.html" class="nav-link">Reportar</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="integrantes.html" class="nav-link">Equipe</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+          <li><a href="alertas.html" class="nav-link nav-cta">Ver Alertas</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <div class="page-header">
+      <div class="page-header-bg" aria-hidden="true"></div>
+      <div class="container page-header-content">
+        <span class="page-header-eyebrow">
+          <span style="display: inline-flex; align-items: center; gap: 0.375rem;">
+            <span style="width:8px; height:8px; border-radius:50%; background:var(--verde-seguro); animation: pulse 2s infinite; display:inline-block;" aria-hidden="true"></span>
+            Monitoramento em tempo real
+          </span>
+        </span>
+        <h1>Alertas Climáticos Ativos</h1>
+        <p>Dados atualizados por satélites NASA, ESA e INPE. Última sincronização: <time datetime="2026-05-25T08:42">25/05/2026 às 08:42</time></p>
+      </div>
+    </div>
+
+    <section class="section" id="alertas" aria-labelledby="alertas-titulo">
+      <div class="container">
+
+        <div class="loading-bar" id="loading-bar" role="status" aria-label="Carregando dados orbitais">
+          <div class="loading-bar-fill"></div>
+        </div>
+
+        <div class="visually-hidden">
+          <h2 id="alertas-titulo">Mapa e lista de alertas</h2>
+        </div>
+
+        <div class="grid-4 fade-in-element" style="margin-bottom: 2rem;" role="region" aria-label="Resumo dos alertas">
+          <div class="card" style="padding: 1.25rem; text-align: center;">
+            <div class="card-stat" id="total-alertas" aria-live="polite">—</div>
+            <p class="card-text" style="font-size: 0.8125rem;">Alertas ativos</p>
+          </div>
+          <div class="card" style="padding: 1.25rem; text-align: center;">
+            <div class="card-stat" id="total-criticos" style="color: var(--vermelho-critico);" aria-live="polite">—</div>
+            <p class="card-text" style="font-size: 0.8125rem;">Nível crítico</p>
+          </div>
+          <div class="card" style="padding: 1.25rem; text-align: center;">
+            <div class="card-stat">5</div>
+            <p class="card-text" style="font-size: 0.8125rem;">Regiões afetadas</p>
+          </div>
+          <div class="card" style="padding: 1.25rem; text-align: center;">
+            <div class="card-stat" style="color: var(--verde-seguro);">3</div>
+            <p class="card-text" style="font-size: 0.8125rem;">Fontes de satélite</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;" class="map-alertas-layout">
+
+            
+            
+          <div class="fade-in-element">
+            <div class="map-container">
+              <h3 style="font-size: 0.875rem; color: var(--ciano-alerta); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem;">
+                Mapa de Alertas — Brasil
+              </h3>
+
+              <div class="map-svg-wrapper" role="img" aria-label="Mapa do Brasil com marcadores de alertas climáticos" style="position: relative;">
+                
+                <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;" aria-hidden="true">
+
+                  <rect width="400" height="460" fill="rgba(13,26,13,0.5)" rx="8"/>
+
+                  <path d="M60,20 L160,15 L230,25 L270,40 L280,80 L260,120 L220,140 L180,150 L140,145 L100,140 L70,120 L50,80 Z"
+                        fill="rgba(192,98,58,0.07)" stroke="rgba(192,98,58,0.25)" stroke-width="1.5"/>
+                  <text x="155" y="85" text-anchor="middle" fill="rgba(196,168,130,0.7)" font-size="11" font-family="sans-serif">Norte</text>
+
+                  <path d="M230,25 L310,30 L350,60 L360,100 L340,140 L300,160 L260,165 L240,155 L260,120 L280,80 L270,40 Z"
+                        fill="rgba(192,98,58,0.05)" stroke="rgba(192,98,58,0.20)" stroke-width="1.5"/>
+                  <text x="300" y="105" text-anchor="middle" fill="rgba(196,168,130,0.7)" font-size="11" font-family="sans-serif">Nordeste</text>
+
+                  <path d="M140,145 L180,150 L220,140 L260,120 L260,165 L240,155 L230,200 L210,240 L180,255 L150,250 L130,230 L120,200 L110,165 Z"
+                        fill="rgba(192,98,58,0.05)" stroke="rgba(192,98,58,0.20)" stroke-width="1.5"/>
+                  <text x="190" y="205" text-anchor="middle" fill="rgba(196,168,130,0.7)" font-size="11" font-family="sans-serif">Centro-Oeste</text>
+
+                  <path d="M210,240 L230,200 L240,155 L260,165 L300,160 L310,200 L295,245 L270,275 L245,280 L220,270 Z"
+                        fill="rgba(192,98,58,0.07)" stroke="rgba(192,98,58,0.25)" stroke-width="1.5"/>
+                  <text x="268" y="225" text-anchor="middle" fill="rgba(196,168,130,0.7)" font-size="11" font-family="sans-serif">Sudeste</text>
+
+                  <path d="M180,255 L210,240 L220,270 L245,280 L235,330 L215,370 L185,390 L160,375 L145,340 L150,300 L160,270 Z"
+                        fill="rgba(192,98,58,0.05)" stroke="rgba(192,98,58,0.20)" stroke-width="1.5"/>
+                  <text x="192" y="330" text-anchor="middle" fill="rgba(196,168,130,0.7)" font-size="11" font-family="sans-serif">Sul</text>
+
+                  <line x1="0" y1="150" x2="400" y2="150" stroke="rgba(192,98,58,0.05)" stroke-width="1"/>
+                  <line x1="0" y1="250" x2="400" y2="250" stroke="rgba(192,98,58,0.05)" stroke-width="1"/>
+                  <line x1="200" y1="0" x2="200" y2="460" stroke="rgba(192,98,58,0.05)" stroke-width="1"/>
+                </svg>
+
+                <div id="mapa-marcadores" style="position: absolute; inset: 0;" aria-hidden="true"></div>
+              </div>
+
+              <div class="map-legend" role="list" aria-label="Legenda de cores do mapa">
+                <div class="map-legend-item" role="listitem">
+                  <div class="map-legend-dot" style="background: var(--vermelho-critico); animation: pulse 1.5s infinite;"></div>
+                  Crítico
+                </div>
+                <div class="map-legend-item" role="listitem">
+                  <div class="map-legend-dot" style="background: var(--laranja-alto);"></div>
+                  Alto
+                </div>
+                <div class="map-legend-item" role="listitem">
+                  <div class="map-legend-dot" style="background: var(--amarelo-moderado);"></div>
+                  Moderado
+                </div>
+                <div class="map-legend-item" role="listitem">
+                  <div class="map-legend-dot" style="background: var(--verde-seguro);"></div>
+                  Baixo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
